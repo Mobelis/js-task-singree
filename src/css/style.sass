@@ -1,0 +1,87 @@
+@mixin absWrapper($p_percent,$over_hidden:hidden)
+    position: relative
+    height: 0
+
+    padding-bottom: $p_percent
+    @if $over_hidden == "hidden"
+        overflow: hidden
+    @else if $over_hidden =="y-auto"
+        overflow-y: auto
+
+html
+  position: relative
+  min-height: 100%
+
+body
+  margin-bottom: 60px
+
+.footer
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: 60px
+  background-color: #f5f5f5
+
+body > .container
+  padding: 60px 0 0
+
+.container .text-muted
+  margin: 20px 0
+
+.footer > .container
+  padding-right: 15px
+  padding-left: 15px
+
+code
+  font-size: 80%
+
+
+#chart_wrap
+ @include absWrapper(50%)
+
+#piechart
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+#rss-wrapper
+  @include absWrapper(90%,'y-auto')
+
+#rss-list
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.error
+  color: red
+
+span.load-rss
+  cursor: pointer
+  font-size: 14px
+
+td.active
+    background-color: #00AA00 !important
+
+#loading
+    width: 100%
+    height: 100%
+    position: fixed
+    z-index: 5000
+    top: 0
+    left: 0
+    background: url("/images/ajax-loader.gif") center center no-repeat rgba(0,0,0, 0.4)
+    color: #fff
+    display: none
+#loading div
+    width: 50px
+    height: 50px
+    background: #00AA00
+    position: absolute
+    left: 50%
+    top: 50%
+
+

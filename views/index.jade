@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    img#loading
+    .row
+        .col-sm-12
+            .error-message.error
+        .col-sm-6
+            form.form-inline#form-add-rss(method='POST')
+                div.form-group
+                    label(for='input-link') rss link
+                    input.form-control#input-link(type='text',name='link')
+                button.btn.btn-primary(type='submit') Add Rss
+                span.help-block.error
+            .table-responsive
+                table.table.table-bordered#table-tr-rss
+            #chart_wrap
+                #piechart
+            p#canvas_size
+                #full-text
+        .col-sm-6
+            .row
+                .col-sm-12#stat
+                .col-sm-12#rss-wrapper
+                    #rss-list
